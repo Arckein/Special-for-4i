@@ -1,0 +1,84 @@
+﻿<Window x:Class="TestInterface.Windows.Client"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:TestInterface.Windows"
+        mc:Ignorable="d"
+        Title="Список клиентов (Салон красоты 'Бархатные бровки')"
+        Height="500" Width="800"
+        ResizeMode="NoResize"
+        Icon="Media/beauty_logo.ico">
+    <Grid>
+        <!-- Layout -->
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1.2*"></RowDefinition>
+            <RowDefinition Height="3*"></RowDefinition>
+            <RowDefinition Height="0.5*"></RowDefinition>
+            <RowDefinition Height="0.5*"></RowDefinition>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+
+        <!-- Header -->
+        <Rectangle Grid.Column="0" Grid.ColumnSpan="3" Grid.Row="0"
+                   Fill="#FFE1E1FF">
+        </Rectangle>
+        <TextBlock  Grid.Column="0" Grid.ColumnSpan="3" Grid.Row="0" 
+                    VerticalAlignment="Center" HorizontalAlignment="Right"
+                    Margin="0,0,15,0"
+                    FontFamily="Tahoma" FontSize="20">Список клиентов</TextBlock>
+        <Image Source="Media/beauty_logo.png"
+               Grid.Column="0"  Grid.Row="0"
+               Margin="10,10,130,10"></Image>
+        
+        <!-- DataGrid -->
+        <DataGrid x:Name="ClientTableDtGrd" 
+                  AutoGenerateColumns="True" 
+                  Grid.Column="0" Grid.ColumnSpan="3" Grid.Row="1">
+            <DataGrid.Columns>
+                <DataGridTextColumn Width="1*"
+                    Header="Фамилия"></DataGridTextColumn>
+                <DataGridTextColumn Width="0.8*"
+                    Header="Имя"></DataGridTextColumn>
+                <DataGridTextColumn Width="0.8*"
+                    Header="Отчество"></DataGridTextColumn>
+                <DataGridTextColumn Width="1.1*"
+                    Header="Дата рождения"></DataGridTextColumn>
+                <DataGridTextColumn Width="0.4*"
+                    Header="Пол"></DataGridTextColumn>
+                <DataGridTextColumn 
+                    Header="Номер телефона"></DataGridTextColumn>
+                <DataGridTextColumn Width="1*"
+                    Header="E-mail"></DataGridTextColumn>
+                <DataGridTextColumn Width="1.1*"
+                    Header="Дата регистрации"></DataGridTextColumn>
+            </DataGrid.Columns>
+        </DataGrid>
+        
+        <!-- Button -->
+        <Button x:Name="AddClientBtn"
+                Grid.Column="0" Grid.Row="2"
+                Background="#FFE1E1FF" Margin="10,5"
+                FontFamily="Tahoma" FontSize="12"
+                Click="AddClientBtn_Click">Добавить</Button>
+        <Button x:Name="ChangeClientBtn"
+                Grid.Column="1" Grid.Row="2"
+                Background="#FFE1E1FF" Margin="10,5"
+                FontFamily="Tahoma" FontSize="12"
+                Click="ChangeClientBtn_Click">Изменить</Button>
+        <Button x:Name="RemoveClientBtn"
+                Grid.Column="2" Grid.Row="2"
+                Background="#FFE1E1FF" Margin="10,5"
+                FontFamily="Tahoma" FontSize="12"
+                Click="RemoveClientBtn_Click">Удалить</Button>
+        <Button x:Name="BackBtn"
+                Grid.Column="2" Grid.Row="3"
+                Background="#FFFF4A6D" Margin="10,5"
+                FontFamily="Tahoma" FontSize="12" Foreground="White"
+                Click="BackBtn_Click">В меню</Button>
+    </Grid>
+</Window>
