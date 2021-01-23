@@ -31,7 +31,7 @@
         <TextBlock  Grid.Column="0" Grid.ColumnSpan="2" Grid.Row="0" 
                     VerticalAlignment="Center" HorizontalAlignment="Right"
                     Margin="0,0,15,0"
-                    FontFamily="Tahoma" FontSize="20">Добавить запись на услуги</TextBlock>
+                    FontFamily="Tahoma" FontSize="20">Добавить данные</TextBlock>
         <Image Source="Media/beauty_logo.png"
                Grid.Column="0"  Grid.Row="0"
                Margin="10,10,60,10"></Image>
@@ -42,7 +42,7 @@
                  FontFamily="Tahoma" FontSize="14"
                  HorizontalAlignment="Right" VerticalAlignment="Center"
                  Text="Фамилия"></TextBlock>
-        <ComboBox x:Name="LastNameBox"
+        <ComboBox x:Name="FirstNameBox" DisplayMemberPath="FirstName"
                  Grid.Column="1" Grid.Row="1"
                  MinHeight="36"
                  Margin="5,10"
@@ -54,7 +54,7 @@
                  FontFamily="Tahoma" FontSize="14"
                  HorizontalAlignment="Right" VerticalAlignment="Center"
                  Text="Имя"></TextBlock>
-        <ComboBox x:Name="NameBox"
+        <ComboBox x:Name="LastNameBox" DisplayMemberPath="LastName"
                  Grid.Column="1" Grid.Row="2"
                  MinHeight="36"
                  Margin="5,10"
@@ -66,7 +66,7 @@
                  FontFamily="Tahoma" FontSize="14"
                  HorizontalAlignment="Right" VerticalAlignment="Center"
                  Text="Отчество"></TextBlock>
-        <ComboBox x:Name="MiddleNameBox"
+        <ComboBox x:Name="PatronymicBox" DisplayMemberPath="Patronymic"
                  Grid.Column="1" Grid.Row="3"
                  MinHeight="36"
                  Margin="5,10"
@@ -78,7 +78,7 @@
                  FontFamily="Tahoma" FontSize="14"
                  HorizontalAlignment="Right" VerticalAlignment="Center"
                  Text="Дата"></TextBlock>
-        <DatePicker x:Name="DateOfBirthPicker"
+        <DatePicker x:Name="DatePicker"
                  Grid.Column="1" Grid.Row="4"
                  MinHeight="36"
                  Margin="5,10"
@@ -103,7 +103,7 @@
                 Grid.Column="0" Grid.ColumnSpan="2" Grid.Row="7"
                 Background="#FFE1E1FF" Margin="10,5"
                 FontFamily="Tahoma" FontSize="12"
-                Click="AddClientServiceBtn_Click">Добавить запись на услуги</Button>
+                Click="AddClientServiceBtn_Click">Добавить данные</Button>
         <Button x:Name="BackBtn"
                 Grid.Column="0" Grid.ColumnSpan="2" Grid.Row="8"
                 Background="#FFFF4A6D" Margin="10,5"

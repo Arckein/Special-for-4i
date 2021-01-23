@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-C:\Users\Altessa\Source\Repos\TestInterface\TestInterface\obj\Debug\
+C:\Users\Altessa\Source\Repos\Special-for-4i\TestInterface\obj\Debug\
 TestInterface
 none
 false
 DEBUG;TRACE
-C:\Users\Altessa\Source\Repos\TestInterface\TestInterface\App.xaml
-91900152969
+C:\Users\Altessa\Source\Repos\Special-for-4i\TestInterface\App.xaml
+10-892581096
 
-13-583399330
-13152784993
-Windows\AddClient.xaml;Windows\AddClientService.xaml;Windows\ChangeClient.xaml;Windows\ChangeClientService.xaml;Windows\Client.xaml;Windows\ClientService.xaml;Windows\MainMenu.xaml;Windows\MainWindow.xaml;Windows\Service.xaml;
+29-1709364877
+18-1274255007
+Windows\AddClient.xaml;Windows\AddClientService.xaml;Windows\AddService.xaml;Windows\ChangeClient.xaml;Windows\ChangeClientService.xaml;Windows\Client.xaml;Windows\ClientService.xaml;Windows\MainMenu.xaml;Windows\MainWindow.xaml;Windows\Service.xaml;
 
 False
 

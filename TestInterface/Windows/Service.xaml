@@ -5,8 +5,98 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:TestInterface.Windows"
         mc:Ignorable="d"
-        Title="Service" Height="450" Width="800">
+        Title="Список услуг (Салон красоты 'Бархатные бровки')"
+        Height="500" Width="800"
+        ResizeMode="NoResize"
+        Icon="Media/beauty_logo.ico">
     <Grid>
+        <!-- Layout -->
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1.2*"></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition Height="0.5*"></RowDefinition>
+            <RowDefinition Height="0.5*"></RowDefinition>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+
+        <!-- Header -->
+        <Rectangle Grid.Column="0" Grid.ColumnSpan="2" Grid.Row="0"
+                   Fill="#FFE1E1FF">
+        </Rectangle>
+        <TextBlock  Grid.Column="0" Grid.ColumnSpan="2" Grid.Row="0" 
+                    VerticalAlignment="Center" HorizontalAlignment="Right"
+                    Margin="0,0,15,0"
+                    FontFamily="Tahoma" FontSize="20">Список услуг</TextBlock>
+        <Image Source="Media/beauty_logo.png"
+               Grid.Column="0"  Grid.Row="0"
+               Margin="10,10,300,10"></Image>
+
+        <ListView x:Name="ListServiceView" Grid.Row="1" Grid.RowSpan="3" Grid.ColumnSpan="2">
+            <ListView.ItemTemplate >
+                <DataTemplate>
+                    <Border Margin="5" 
+                            Width="744"
+                            BorderThickness="1" CornerRadius="4"
+                            BorderBrush="#FFFF4A6D" Background="{Binding ColorFill}">
+                        <StackPanel Orientation="Horizontal" Height="auto">
+                            <Image Source="{Binding MainImagePath}"
+                                   Width="150"></Image>
+                            <StackPanel Orientation="Vertical">
+                                <TextBlock Text="{Binding Title}"
+                                       FontFamily="Tahoma" FontSize="12"
+                                       Margin="5"></TextBlock>
+                                <TextBlock Text="{Binding CostSale }"
+                                       FontFamily="Tahoma" FontSize="12"
+                                       Margin="5"></TextBlock>
+                                <TextBlock Text="{Binding SizeOfDiscount}"
+                                       FontFamily="Tahoma" FontSize="12"
+                                       Margin="5"></TextBlock>
+                                <StackPanel Orientation="Horizontal">
+                                    <Button x:Name="ChanceService"
+                                        Margin="10,5"
+                                        Click="ChanceService_Click">Редактировать</Button>
+                                    <Button x:Name="RemoveService"
+                                        Margin="10,5"
+                                        Click="RemoveService_Click">Удалить</Button>
+                                </StackPanel>
+                            </StackPanel>
+                        </StackPanel>
+                    </Border>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+                 
+            
+               
+            
+            
+                       
+        </ListView>
+        <!-- Buttons -->
+        <Button x:Name="AddServiceBtn"
+                Grid.Column="0" Grid.Row="5"
+                Background="#FFE1E1FF" Margin="10,5"
+                FontFamily="Tahoma" FontSize="12"
+                Click="AddServiceBtn_Click">Добавить</Button>
+        <Button x:Name="NextListBtn"
+                Grid.Column="1" Grid.Row="4"
+                Background="White" Margin="10,5"
+                FontFamily="Tahome" FontSize="15"
+                Click="NextListBtn_Click">Следующая</Button>
+        <Button x:Name="BackListBtn"
+                Grid.Column="0" Grid.Row="4"
+                Background="White" Margin="10,5"
+                FontFamily="Tahome" FontSize="15"
+                Click="BackListBtn_Click">Предыдущая</Button>
+        <Button x:Name="BackBtn"
+                Grid.Column="1" Grid.Row="5"
+                Background="#FFFF4A6D" Margin="10,5"
+                FontFamily="Tahoma" FontSize="12" Foreground="White"
+                Click="BackBtn_Click">В меню</Button>
         
     </Grid>
 </Window>

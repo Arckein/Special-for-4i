@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Data.Entity;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -34,7 +35,9 @@ namespace TestInterface.Windows
 
         private void ServiceBtn_Click(object sender, RoutedEventArgs e)
         {
-
+            Service service = new Service();
+            service.Show();
+            this.Hide();
         }
 
         private void ClientBtn_Click(object sender, RoutedEventArgs e)

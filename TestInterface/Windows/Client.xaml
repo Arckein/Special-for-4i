@@ -37,25 +37,34 @@
         
         <!-- DataGrid -->
         <DataGrid x:Name="ClientTableDtGrd" 
-                  AutoGenerateColumns="True" 
+                  AutoGenerateColumns="False" 
+                  CanUserAddRows="False" CanUserSortColumns="False"
                   Grid.Column="0" Grid.ColumnSpan="3" Grid.Row="1">
             <DataGrid.Columns>
                 <DataGridTextColumn Width="1*"
-                    Header="Фамилия"></DataGridTextColumn>
+                    Header="Фамилия" 
+                    Binding="{Binding FirstName}"></DataGridTextColumn>
                 <DataGridTextColumn Width="0.8*"
-                    Header="Имя"></DataGridTextColumn>
+                    Header="Имя"
+                    Binding="{Binding LastName}"></DataGridTextColumn>
                 <DataGridTextColumn Width="0.8*"
-                    Header="Отчество"></DataGridTextColumn>
+                    Header="Отчество"
+                    Binding="{Binding Patronymic}"></DataGridTextColumn>
                 <DataGridTextColumn Width="1.1*"
-                    Header="Дата рождения"></DataGridTextColumn>
+                    Header="Дата рождения"
+                    Binding="{Binding Birthday}"></DataGridTextColumn>
                 <DataGridTextColumn Width="0.4*"
-                    Header="Пол"></DataGridTextColumn>
+                    Header="Пол"
+                    Binding="{Binding Gender.Name}"></DataGridTextColumn>
                 <DataGridTextColumn 
-                    Header="Номер телефона"></DataGridTextColumn>
+                    Header="Номер телефона"
+                    Binding="{Binding Phone}"></DataGridTextColumn>
                 <DataGridTextColumn Width="1*"
-                    Header="E-mail"></DataGridTextColumn>
+                    Header="E-mail"
+                    Binding="{Binding Email}"></DataGridTextColumn>
                 <DataGridTextColumn Width="1.1*"
-                    Header="Дата регистрации"></DataGridTextColumn>
+                    Header="Дата регистрации"
+                    Binding="{Binding RegistrationDate}"></DataGridTextColumn>
             </DataGrid.Columns>
         </DataGrid>
         

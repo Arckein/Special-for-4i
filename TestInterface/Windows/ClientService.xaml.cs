@@ -1,16 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.Data.Entity;
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
+using System.Windows.Threading;
 
 namespace TestInterface.Windows
 {
@@ -19,9 +10,29 @@ namespace TestInterface.Windows
     /// </summary>
     public partial class ClientService : Window
     {
+        ModelDB.ModelSalon db = new ModelDB.ModelSalon();
+        public static ModelDB.ClientService clientService = new ModelDB.ClientService();
         public ClientService()
         {
             InitializeComponent();
+            clientService = null;
+            db.ClientService.Load();
+            ClientServiceTableDtGrd.ItemsSource = db.ClientService.Local;
+
+            DispatcherTimer timer = new DispatcherTimer();
+            timer.Tick += new EventHandler(timer_Tick);
+            timer.Interval = new TimeSpan(0, 0, 30);
+            timer.Start();
+        }
+
+        void ClientServiceClick()
+        {
+            clientService = (ModelDB.ClientService)ClientServiceTableDtGrd.SelectedItem;
+        }
+
+        private void timer_Tick(object sender, EventArgs e)
+        {
+            ClientServiceTableDtGrd.ItemsSource = db.ClientService.Local;
         }
 
         private void AddClientServiceBtn_Click(object sender, RoutedEventArgs e)
@@ -32,8 +43,17 @@ namespace TestInterface.Windows
 
         private void ChangeClientServiceBtn_Click(object sender, RoutedEventArgs e)
         {
-            ChangeClientService changeClientService = new ChangeClientService();
-            changeClientService.Show();
+            ClientServiceClick();
+            if (clientService != null)
+            {
+                ChangeClientService changeClientService = new ChangeClientService();
+                changeClientService.Show();
+                this.Close();
+            }
+            else
+            {
+                MessageBox.Show("Выберите запись для редактирования!", "Ошибка");
+            }
         }
 
         private void RemoveClientServiceBtn_Click(object sender, RoutedEventArgs e)

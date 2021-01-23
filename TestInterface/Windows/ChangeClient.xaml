@@ -44,7 +44,7 @@
                  FontFamily="Tahoma" FontSize="14"
                  HorizontalAlignment="Right" VerticalAlignment="Center"
                  Text="Фамилия"></TextBlock>
-        <TextBox x:Name="LastNameTxt"
+        <TextBox x:Name="FirstNameTxt"
                  Grid.Column="1" Grid.Row="1"
                  MinHeight="36"
                  Margin="5,10"
@@ -56,7 +56,7 @@
                  FontFamily="Tahoma" FontSize="14"
                  HorizontalAlignment="Right" VerticalAlignment="Center"
                  Text="Имя"></TextBlock>
-        <TextBox x:Name="NameTxt"
+        <TextBox x:Name="LastNameTxt"
                  Grid.Column="1" Grid.Row="2"
                  MinHeight="36"
                  Margin="5,10"
@@ -68,7 +68,7 @@
                  FontFamily="Tahoma" FontSize="14"
                  HorizontalAlignment="Right" VerticalAlignment="Center"
                  Text="Отчество"></TextBlock>
-        <TextBox x:Name="MiddleNameTxt"
+        <TextBox x:Name="PatronymicTxt"
                  Grid.Column="1" Grid.Row="3"
                  MinHeight="36"
                  Margin="5,10"
@@ -80,24 +80,24 @@
                  FontFamily="Tahoma" FontSize="14"
                  HorizontalAlignment="Right" VerticalAlignment="Center"
                  Text="Дата рождения"></TextBlock>
-        <DatePicker x:Name="DateOfBirthPicker"
+        <TextBox x:Name="BirthdayTxt"
                  Grid.Column="1" Grid.Row="4"
                  MinHeight="36"
                  Margin="5,10"
                  FontFamily="Tahoma" FontSize="14"
-                 VerticalContentAlignment="Center" HorizontalContentAlignment="Center"></DatePicker>
+                 VerticalContentAlignment="Center" HorizontalContentAlignment="Center"></TextBox>
 
         <TextBlock Grid.Column="0" Grid.Row="5"
                  Margin="5"
                  FontFamily="Tahoma" FontSize="14"
                  HorizontalAlignment="Right" VerticalAlignment="Center"
                  Text="Пол"></TextBlock>
-        <ComboBox x:Name="GenderBox"
+        <TextBox x:Name="GenderTxt"
                  Grid.Column="1" Grid.Row="5"
                  MinHeight="36"
                  Margin="5,10"
                  FontFamily="Tahoma" FontSize="14"
-                 VerticalContentAlignment="Center" HorizontalContentAlignment="Center"></ComboBox>
+                 VerticalContentAlignment="Center" HorizontalContentAlignment="Center"></TextBox>
 
         <TextBlock Grid.Column="0" Grid.Row="6"
                  Margin="5"

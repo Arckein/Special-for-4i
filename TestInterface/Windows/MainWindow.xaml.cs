@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Data.Entity;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -20,16 +21,24 @@ namespace TestInterface.Windows
     /// </summary>
     public partial class MainWindow : Window
     {
+        ModelDB.ModelSalon db = new ModelDB.ModelSalon();
         public MainWindow()
         {
             InitializeComponent();
         }
         private void AutorizationBtn_Click(object sender, RoutedEventArgs e)
         {
-            MainMenu mainMenu = new MainMenu();
-            mainMenu.Show();
-            this.Close();
-
+            db.Authorization.Load();
+            if (db.Authorization.AsNoTracking().Where(x => x.login == LoginTxt.Text && x.password == PasswordTxt.Password) != null)
+            {
+                MainMenu mainMenu = new MainMenu();
+                mainMenu.Show();
+                this.Close();
+            }
+            else 
+            {
+                MessageBox.Show("Введен неверный логин или пароль!", "Ошибка!");
+            };                
         }
 
         private void ExitBtn_Click(object sender, RoutedEventArgs e)

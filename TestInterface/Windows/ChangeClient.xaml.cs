@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Data.Entity;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -19,9 +20,17 @@ namespace TestInterface.Windows
     /// </summary>
     public partial class ChangeClient : Window
     {
+        
         public ChangeClient()
         {
             InitializeComponent();
+            FirstNameTxt.Text = Client.client.FirstName;
+            LastNameTxt.Text = Client.client.LastName;
+            PatronymicTxt.Text = Client.client.Patronymic;
+            BirthdayTxt.Text = Convert.ToString(Client.client.Birthday);
+            GenderTxt.Text = Client.client.Gender.Name;
+            PhoneTxt.Text = Client.client.Phone;
+            EMailTxt.Text = Client.client.Email;           
         }
 
         private void ChangeClientBtn_Click(object sender, RoutedEventArgs e)

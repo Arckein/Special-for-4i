@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:TestInterface.Windows"
         mc:Ignorable="d"
         Title="Запись на услуги (Салон красоты 'Бархатные бровки')"
-        Height="500" Width="800"
+        Height="500" Width="1100"
         ResizeMode="NoResize"
         Icon="Media/beauty_logo.ico">
     <Grid>
@@ -37,21 +37,30 @@
 
         <!-- DataGrid -->
         <DataGrid x:Name="ClientServiceTableDtGrd" 
-                  AutoGenerateColumns="True" 
+                  AutoGenerateColumns="False" CanUserAddRows="False" 
                   Grid.Column="0" Grid.ColumnSpan="3" Grid.Row="1">
             <DataGrid.Columns>
                 <DataGridTextColumn Width="1*"
-                    Header="Фамилия"></DataGridTextColumn>
+                    Header="Фамилия"
+                    Binding="{Binding Client.FirstName }"></DataGridTextColumn>
                 <DataGridTextColumn Width="0.8*"
-                    Header="Имя"></DataGridTextColumn>
+                    Header="Имя"
+                    Binding="{Binding Client.LastName}"></DataGridTextColumn>
                 <DataGridTextColumn Width="0.8*"
-                    Header="Отчество"></DataGridTextColumn>
+                    Header="Отчество"
+                    Binding="{Binding Client.Patronymic}"></DataGridTextColumn>
                 <DataGridTextColumn Width="1.1*"
-                    Header="Вид услуги"></DataGridTextColumn>
+                    Header="Вид услуги"
+                    Binding="{Binding Service.Title}"></DataGridTextColumn>
                 <DataGridTextColumn Width="0.4*"
-                    Header="Дата"></DataGridTextColumn>
+                    Header="Дата"
+                    Binding="{Binding Date}"></DataGridTextColumn>
                 <DataGridTextColumn 
-                    Header="Время"></DataGridTextColumn>
+                    Header="Время"
+                    Binding="{Binding Time}"></DataGridTextColumn>
+                <DataGridTextColumn Width="0.4*"
+                    Header="До услуги"
+                    Binding="{Binding Remaining}"></DataGridTextColumn>
             </DataGrid.Columns>
         </DataGrid>
 

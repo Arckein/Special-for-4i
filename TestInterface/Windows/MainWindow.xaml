@@ -55,11 +55,11 @@
                  FontFamily="Tahoma" FontSize="14"
                  VerticalAlignment="Center" HorizontalAlignment="Center">
             </TextBlock>
-            <TextBox x:Name="PasswordTxt"  
+            <PasswordBox x:Name="PasswordTxt"  
                  MinHeight="25"
                  Margin="50,0"
                  FontFamily="Tahoma" FontSize="18"
-                 VerticalContentAlignment="Center" HorizontalContentAlignment="Center"></TextBox>
+                 VerticalContentAlignment="Center" HorizontalContentAlignment="Center"></PasswordBox>
         </StackPanel>
         
         <!-- Buttons -->

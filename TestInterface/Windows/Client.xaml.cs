@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -19,9 +20,19 @@ namespace TestInterface.Windows
     /// </summary>
     public partial class Client : Window
     {
+        ModelDB.ModelSalon db = new ModelDB.ModelSalon();
+        public static ModelDB.Client client = new ModelDB.Client();
         public Client()
         {
             InitializeComponent();
+            client = null;
+            db.Client.Load();
+            ClientTableDtGrd.ItemsSource = db.Client.Local;
+        }
+
+        void ClientClick()
+        {
+           client = (ModelDB.Client)ClientTableDtGrd.SelectedItem;
         }
 
         private void AddClientBtn_Click(object sender, RoutedEventArgs e)
@@ -32,8 +43,17 @@ namespace TestInterface.Windows
 
         private void ChangeClientBtn_Click(object sender, RoutedEventArgs e)
         {
-            ChangeClient changeClient = new ChangeClient();
-            changeClient.Show();
+            ClientClick();
+            if (client != null)
+            {
+                ChangeClient changeClient = new ChangeClient();
+                changeClient.Show();
+                this.Close();
+            }
+            else
+            {
+                MessageBox.Show("Выберите запись для редактирования!","Ошибка");
+            }
         }
 
         private void RemoveClientBtn_Click(object sender, RoutedEventArgs e)

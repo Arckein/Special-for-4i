@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Data.Entity;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -19,10 +20,12 @@ namespace TestInterface.Windows
     /// </summary>
     public partial class ChangeClientService : Window
     {
+
         public ChangeClientService()
         {
             InitializeComponent();
         }
+
 
         private void ChangeClientServiceBtn_Click(object sender, RoutedEventArgs e)
         {
